@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade session viewer</title>
+</head>
+<body>
+    {% for goal, sessions in sessions_grouped.items()  %}
+        <div class="session_group">
+            <h2>Goal: {{ goal }}</h2>
+            {% for session in sessions %}
+                <div class="session_item">
+                    <h3>Session title: {{ session['work'] }}</h3>
+                    <p>Created at: {{ session['createdAt'] }}</p>
+                    <p>Lasted: {{ session['elapsed'] }}</p>
+                    <p>Status: {{ session['status'] }}</p>
+                    <p>Timezone: {{ session['timezone'] }}</p>
+                    {% if session['status'] == 'approved' %}
+                        <p>Minutes approved: {{ session['minutes_approved'] }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
