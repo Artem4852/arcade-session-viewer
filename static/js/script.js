@@ -18,12 +18,6 @@ function adjustTimezones() {
 
 document.addEventListener("DOMContentLoaded", function () {
     adjustTimezones();
-
-    if (sessions_grouped != {}) {
-        const credential_input = document.querySelector(".input_credentials")
-        document.body.removeChild(credential_input);
-        document.body.appendChild(credential_input);
-    }
 });
 
 function updateCookies() {
@@ -45,6 +39,7 @@ function updateCookies() {
 function loadUrl(id) {
     var span = document.getElementById(id);
     span.innerHTML = "Loading...";
+    span.style.textDecoration = "none";
     fetch('/get-url', {
         method: 'POST',
         headers: {
@@ -69,6 +64,7 @@ function loadStatus(id) {
     var status_span = document.getElementById(id);
     var link_span = document.getElementById("url" + id.replace("status", ""));
     status_span.innerHTML = "Loading...";
+    status_span.style.textDecoration = "none";
     fetch('/get-status', {
         method: 'POST',
         headers: {

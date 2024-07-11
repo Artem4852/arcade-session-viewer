@@ -9,14 +9,6 @@
 </head>
 <body>
     <h1>Arcade session viewer</h1>
-    <div class="input_credentials">
-        <h2>Your credentials</h2>
-        <h3>Slack user id:</h3>
-        <input type="text" id="input_user_id" autocomplete="off">
-        <h3>Arcade API key:</h3>
-        <input type="text" id="input_api_key" autocomplete="off">
-        <button onclick="updateCookies()">Update credentials</button>
-    </div>
     {% for goal, sessions in sessions_grouped.items()  %}
         <div class="session_group">
             <h2>Goal: {{ goal }}</h2>
@@ -34,9 +26,14 @@
         </div>
         <div class="divider"></div>
     {% endfor %}
-    <script>
-        var sessions_grouped = {{ sessions_grouped | tojson }};
-    </script>
+    <div class="input_credentials">
+        <h2>Your credentials</h2>
+        <h3>Slack user id:</h3>
+        <input type="text" id="input_user_id" autocomplete="off">
+        <h3>Arcade API key:</h3>
+        <input type="text" id="input_api_key" autocomplete="off">
+        <button onclick="updateCookies()">Update credentials</button>
+    </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
