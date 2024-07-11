@@ -40,6 +40,43 @@ p
 a
     color: $white
 
+.input_credentials
+    margin-top: 50px
+    width: 100%
+
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    h3
+        margin-bottom: 5px
+
+    input
+        border: none
+        background-color: $light-blue
+        border-radius: 5px
+        color: $white
+        padding: 10px
+        margin-bottom: 20px
+        width: 200px
+        font-size: 16px
+
+        &:focus
+            outline: none
+
+    button
+        border: none
+        background-color: $light-blue
+        color: $white
+        border-radius: 5px
+        padding: 10px
+        width: 200px
+        cursor: pointer
+        font-size: 16px
+
+        &:hover
+            background-color: $blue
+
 .session_group
     margin-top: 50px
 
@@ -50,14 +87,15 @@ a
         display: flex
         flex-direction: row
         flex-wrap: wrap
+        justify-content: space-between
 
         .session_item
-            margin: 10px
+            margin: 10px 0
             padding: 10px
             border-radius: 5px
             background-color: $light-blue
             color: $white
-            width: 45vw
+            width: 49%
             min-width: 200px
 
             h3
@@ -72,3 +110,15 @@ a
     width: 100%
     height: 2px
     background-color: $orange
+
+@media (max-width: 480px)
+    .session_group
+        .session_items
+            flex-direction: column
+            flex-wrap: nowrap
+            align-items: center
+            width: 100%
+
+            .session_item
+                width: 90vw
+                margin: 10px 0

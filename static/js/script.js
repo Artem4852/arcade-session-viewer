@@ -17,15 +17,30 @@ function adjustTimezones() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // fetch('/set-timezone', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({ timezone: timezone })
-    // });
     adjustTimezones();
+
+    if (sessions_grouped != {}) {
+        const credential_input = document.querySelector(".input_credentials")
+        document.body.removeChild(credential_input);
+        document.body.appendChild(credential_input);
+    }
 });
+
+function updateCookies() {
+    user_id = document.getElementById("input_user_id").value;
+    api_key = document.getElementById("input_api_key").value;
+    fetch('/set-cookies', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ user_id: user_id, api_key: api_key })
+    }).then(response => response.json())
+        .then(data => {
+            console.log(data);
+            location.reload();
+        });
+}
 
 function loadUrl(id) {
     var span = document.getElementById(id);
