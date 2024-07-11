@@ -78,10 +78,11 @@ app = flask.Flask(__name__)
 def main():
     api_key = request.cookies.get('api_key')
     if api_key:
-        sessions_grouped = get_sessions("Never gonna give you up", api_key)
+        try: sessions_grouped = get_sessions("Never gonna give you up", api_key)
+        except: return render_template('index.html', sessions_grouped={}, error='arcade_api')
     else:
         sessions_grouped = {}
-    return render_template('index.html', sessions_grouped=sessions_grouped)
+    return render_template('index.html', sessions_grouped=sessions_grouped, error=None)
 
 @app.route('/get-url', methods=['POST'])
 def get_url():

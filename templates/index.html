@@ -9,6 +9,9 @@
 </head>
 <body>
     <h1>Arcade session viewer</h1>
+    {% if error %}
+        <h3>Arcade API does not respond. Please reload this page in 10-20 seconds. No need to change user id/api key if you are sure they are correct.</h3>
+    {% endif %}
     {% for goal, sessions in sessions_grouped.items()  %}
         <div class="session_group">
             <h2>Goal: {{ goal }}</h2>
