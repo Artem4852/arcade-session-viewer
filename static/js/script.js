@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM loaded and parsed");
-    var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    fetch('/set_timezone', {
+    var timezone = new Date().getTimezoneOffset();
+    console.log("Timezone: " + timezone);
+    fetch('/set-timezone', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -9,3 +9,26 @@ document.addEventListener("DOMContentLoaded", function () {
         body: JSON.stringify({ timezone: timezone })
     });
 });
+
+function loadUrl(id) {
+    var span = document.getElementById(id);
+    span.innerHTML = "Loading...";
+    fetch('/get-url', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id: id })
+    }).then(response => response.json())
+        .then(data => {
+            console.log(data);
+            if (data.url == null) {
+                span.innerHTML = "Unable to load URL.";
+                span.style.cursor = "default";
+            }
+            else {
+                span.innerHTML = `<a href=${data.url} target="_blank">Slack thread</a>`;
+            }
+            span.style.textDecoration = "none";
+        });
+}

@@ -1,5 +1,14 @@
 {
-  "No Goal": [
+  "ok": true,
+  "data": [
+    {
+      "createdAt": "2024-06-20T08:19:20.240Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "A Difficult Game About Climbing mod",
+      "ended": true,
+      "work": "figure out how to add a collider to a new gameobject"
+    },
     {
       "createdAt": "2024-06-19T08:58:34.176Z",
       "time": 60,
@@ -9,30 +18,12 @@
       "work": "The arcade tutorial "
     },
     {
-      "createdAt": "2024-07-06T11:53:09.907Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "No Goal",
-      "ended": true,
-      "work": "final improvements"
-    }
-  ],
-  "A Difficult Game About Climbing mod": [
-    {
       "createdAt": "2024-06-19T09:45:43.139Z",
       "time": 60,
       "elapsed": 60,
       "goal": "A Difficult Game About Climbing mod",
       "ended": true,
       "work": "modding the game \"A Difficult Game About Climbing\""
-    },
-    {
-      "createdAt": "2024-06-19T10:52:52.451Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "A Difficult Game About Climbing mod",
-      "ended": true,
-      "work": "adding sinking warship to the background"
     },
     {
       "createdAt": "2024-06-19T14:17:48.345Z",
@@ -43,6 +34,14 @@
       "work": "implement loading .obj meshes"
     },
     {
+      "createdAt": "2024-06-19T10:52:52.451Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "A Difficult Game About Climbing mod",
+      "ended": true,
+      "work": "adding sinking warship to the background"
+    },
+    {
       "createdAt": "2024-06-20T07:19:10.009Z",
       "time": 60,
       "elapsed": 60,
@@ -51,23 +50,13 @@
       "work": "solving problem with uv alignment"
     },
     {
-      "createdAt": "2024-06-20T08:19:20.240Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "A Difficult Game About Climbing mod",
-      "ended": true,
-      "work": "figure out how to add a collider to a new gameobject"
-    },
-    {
       "createdAt": "2024-06-20T09:28:32.938Z",
       "time": 60,
       "elapsed": 60,
       "goal": "A Difficult Game About Climbing mod",
       "ended": true,
       "work": "fix hands grabbing"
-    }
-  ],
-  "AI for 2048 game": [
+    },
     {
       "createdAt": "2024-06-20T17:14:35.639Z",
       "time": 60,
@@ -75,6 +64,14 @@
       "goal": "AI for 2048 game",
       "ended": true,
       "work": "making the basic game"
+    },
+    {
+      "createdAt": "2024-06-22T19:39:25.089Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Calculator for tickets and prizes",
+      "ended": true,
+      "work": "continuing css, adding functionally with js"
     },
     {
       "createdAt": "2024-06-21T07:59:44.685Z",
@@ -85,14 +82,6 @@
       "work": "improvements and bug fixes"
     },
     {
-      "createdAt": "2024-06-21T10:33:21.702Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "AI for 2048 game",
-      "ended": true,
-      "work": "prepare the game for AI control"
-    },
-    {
       "createdAt": "2024-06-21T12:51:48.577Z",
       "time": 60,
       "elapsed": 60,
@@ -101,12 +90,12 @@
       "work": "working on ai for the game"
     },
     {
-      "createdAt": "2024-06-21T14:11:11.798Z",
+      "createdAt": "2024-06-21T10:33:21.702Z",
       "time": 60,
       "elapsed": 60,
       "goal": "AI for 2048 game",
       "ended": true,
-      "work": "improve the ai model"
+      "work": "prepare the game for AI control"
     },
     {
       "createdAt": "2024-06-21T15:20:31.997Z",
@@ -133,15 +122,13 @@
       "work": "improving ai model 4"
     },
     {
-      "createdAt": "2024-06-22T11:47:29.823Z",
+      "createdAt": "2024-06-21T14:11:11.798Z",
       "time": 60,
       "elapsed": 60,
       "goal": "AI for 2048 game",
       "ended": true,
-      "work": "improving ai 5: trying to help it learn a specific strategy"
-    }
-  ],
-  "Calculator for tickets and prizes": [
+      "work": "improve the ai model"
+    },
     {
       "createdAt": "2024-06-22T13:42:58.481Z",
       "time": 60,
@@ -167,14 +154,6 @@
       "work": "adding css"
     },
     {
-      "createdAt": "2024-06-22T19:39:25.089Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Calculator for tickets and prizes",
-      "ended": true,
-      "work": "continuing css, adding functionally with js"
-    },
-    {
       "createdAt": "2024-06-23T08:13:33.612Z",
       "time": 60,
       "elapsed": 60,
@@ -182,24 +161,6 @@
       "ended": true,
       "work": "small ui tweaks, making it responsive on smaller screen sizes"
     },
-    {
-      "createdAt": "2024-06-24T06:39:30.063Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Calculator for tickets and prizes",
-      "ended": true,
-      "work": "adding python backend"
-    },
-    {
-      "createdAt": "2024-06-24T08:10:59.719Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Calculator for tickets and prizes",
-      "ended": true,
-      "work": "fixing no-backend version"
-    }
-  ],
-  "AI for tetris game": [
     {
       "createdAt": "2024-06-23T09:54:23.091Z",
       "time": 60,
@@ -223,9 +184,31 @@
       "goal": "AI for tetris game",
       "ended": true,
       "work": "creating the ai model"
-    }
-  ],
-  "Data statistics for Arcade": [
+    },
+    {
+      "createdAt": "2024-06-22T11:47:29.823Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "AI for 2048 game",
+      "ended": true,
+      "work": "improving ai 5: trying to help it learn a specific strategy"
+    },
+    {
+      "createdAt": "2024-06-24T06:39:30.063Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Calculator for tickets and prizes",
+      "ended": true,
+      "work": "adding python backend"
+    },
+    {
+      "createdAt": "2024-06-24T08:10:59.719Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Calculator for tickets and prizes",
+      "ended": true,
+      "work": "fixing no-backend version"
+    },
     {
       "createdAt": "2024-06-26T08:24:39.719Z",
       "time": 60,
@@ -243,20 +226,44 @@
       "work": "restructuring the code"
     },
     {
-      "createdAt": "2024-06-26T19:27:17.154Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Data statistics for Arcade",
-      "ended": true,
-      "work": "finishing up the python part. beginning with html"
-    },
-    {
       "createdAt": "2024-06-28T17:38:40.241Z",
       "time": 60,
       "elapsed": 60,
       "goal": "Data statistics for Arcade",
       "ended": true,
       "work": "working on html and js placeholders"
+    },
+    {
+      "createdAt": "2024-07-01T12:44:24.569Z",
+      "time": 60,
+      "elapsed": 15,
+      "goal": "Slack automation",
+      "ended": true,
+      "work": "automating slack"
+    },
+    {
+      "createdAt": "2024-06-30T15:24:45.093Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Minecraftize",
+      "ended": true,
+      "work": "improving and optimizing the code"
+    },
+    {
+      "createdAt": "2024-06-30T12:32:10.539Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Minecraftize",
+      "ended": true,
+      "work": "beginning work on converter"
+    },
+    {
+      "createdAt": "2024-06-30T07:18:50.737Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Data statistics for Arcade",
+      "ended": true,
+      "work": "finishing visual part"
     },
     {
       "createdAt": "2024-06-29T18:03:09.748Z",
@@ -267,106 +274,44 @@
       "work": "finish working on placeholders, focusing on visual part"
     },
     {
-      "createdAt": "2024-06-30T07:18:50.737Z",
+      "createdAt": "2024-06-26T19:27:17.154Z",
       "time": 60,
       "elapsed": 60,
       "goal": "Data statistics for Arcade",
       "ended": true,
-      "work": "finishing visual part"
-    }
-  ],
-  "Slack automation": [
-    {
-      "createdAt": "1719837864",
-      "time": 60,
-      "elapsed": 15,
-      "goal": "Slack automation",
-      "ended": true,
-      "work": "automating slack"
+      "work": "finishing up the python part. beginning with html"
     },
     {
-      "createdAt": "2024-07-07T08:52:35.445Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Slack automation",
-      "ended": true,
-      "work": "working on fetching threads"
-    },
-    {
-      "createdAt": "2024-07-07T12:24:34.928Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Slack automation",
-      "ended": true,
-      "work": "continuing work on automations"
-    },
-    {
-      "createdAt": "2024-07-07T13:43:18.723Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Slack automation",
-      "ended": true,
-      "work": "working on apis"
-    },
-    {
-      "createdAt": "2024-07-08T08:32:55.422Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Slack automation",
-      "ended": true,
-      "work": "working on ui for the app"
-    },
-    {
-      "createdAt": "2024-07-08T14:34:52.464Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Slack automation",
-      "ended": true,
-      "work": "working on ui"
-    },
-    {
-      "createdAt": "2024-07-09T07:33:21.192Z",
-      "time": 60,
-      "elapsed": 34,
-      "goal": "Slack automation",
-      "ended": true,
-      "work": "working on ui 3"
-    }
-  ],
-  "Minecraftize": [
-    {
-      "createdAt": "2024-06-30T12:32:10.539Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Minecraftize",
-      "ended": true,
-      "work": "beginning work on converter"
-    },
-    {
-      "createdAt": "2024-06-30T15:24:45.093Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "Minecraftize",
-      "ended": true,
-      "work": "improving and optimizing the code"
-    }
-  ],
-  "3d website - dino": [
-    {
-      "createdAt": "2024-07-02T18:58:53.074Z",
+      "createdAt": "2024-07-04T13:02:59.922Z",
       "time": 60,
       "elapsed": 60,
       "goal": "3d website - dino",
       "ended": true,
-      "work": "preparing the html and js"
+      "work": "working on animation and enhancing the level"
     },
     {
-      "createdAt": "2024-07-03T09:46:02.300Z",
+      "createdAt": "2024-07-10T09:00:35.972Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Instagram Scraper",
+      "ended": true,
+      "work": "enhancing the output information"
+    },
+    {
+      "createdAt": "2024-07-04T08:20:47.331Z",
       "time": 60,
       "elapsed": 60,
       "goal": "3d website - dino",
       "ended": true,
-      "work": "modeling assets"
+      "work": "correcting physics of the jump, implementing collision detection (hopefully)"
+    },
+    {
+      "createdAt": "2024-07-04T16:54:03.321Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "3d website - dino",
+      "ended": true,
+      "work": "reworking the assets"
     },
     {
       "createdAt": "2024-07-03T10:53:42.659Z",
@@ -393,36 +338,12 @@
       "work": "even more work on script - movement of obstacles"
     },
     {
-      "createdAt": "2024-07-04T08:20:47.331Z",
+      "createdAt": "2024-07-08T08:32:55.422Z",
       "time": 60,
       "elapsed": 60,
-      "goal": "3d website - dino",
+      "goal": "Slack automation",
       "ended": true,
-      "work": "correcting physics of the jump, implementing collision detection (hopefully)"
-    },
-    {
-      "createdAt": "2024-07-04T10:28:01.120Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "3d website - dino",
-      "ended": true,
-      "work": "working on obstacle that makes you crouch"
-    },
-    {
-      "createdAt": "2024-07-04T13:02:59.922Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "3d website - dino",
-      "ended": true,
-      "work": "working on animation and enhancing the level"
-    },
-    {
-      "createdAt": "2024-07-04T16:54:03.321Z",
-      "time": 60,
-      "elapsed": 60,
-      "goal": "3d website - dino",
-      "ended": true,
-      "work": "reworking the assets"
+      "work": "working on ui for the app"
     },
     {
       "createdAt": "2024-07-05T06:56:11.868Z",
@@ -441,6 +362,14 @@
       "work": "improvements"
     },
     {
+      "createdAt": "2024-07-07T08:52:35.445Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Slack automation",
+      "ended": true,
+      "work": "working on fetching threads"
+    },
+    {
       "createdAt": "2024-07-05T10:13:10.367Z",
       "time": 60,
       "elapsed": 60,
@@ -457,12 +386,36 @@
       "work": "optimizing the game"
     },
     {
+      "createdAt": "2024-07-07T12:24:34.928Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Slack automation",
+      "ended": true,
+      "work": "continuing work on automations"
+    },
+    {
       "createdAt": "2024-07-05T19:25:36.430Z",
       "time": 60,
       "elapsed": 60,
       "goal": "3d website - dino",
       "ended": true,
       "work": "working on ui"
+    },
+    {
+      "createdAt": "2024-07-07T13:43:18.723Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Slack automation",
+      "ended": true,
+      "work": "working on apis"
+    },
+    {
+      "createdAt": "2024-07-10T10:45:23.221Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Instagram Scraper",
+      "ended": true,
+      "work": "improvements and enhancements"
     },
     {
       "createdAt": "2024-07-06T07:51:17.199Z",
@@ -479,9 +432,39 @@
       "goal": "3d website - dino",
       "ended": true,
       "work": "additional improvements - actually waiting for assets to load, improving ui"
-    }
-  ],
-  "Instagram Scraper": [
+    },
+    {
+      "createdAt": "2024-07-06T11:53:09.907Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "No Goal",
+      "ended": true,
+      "work": "final improvements"
+    },
+    {
+      "createdAt": "2024-07-08T14:34:52.464Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Slack automation",
+      "ended": true,
+      "work": "working on ui"
+    },
+    {
+      "createdAt": "2024-07-10T15:02:42.639Z",
+      "time": 60,
+      "elapsed": 60,
+      "goal": "Session viewer",
+      "ended": true,
+      "work": "working on the html and js"
+    },
+    {
+      "createdAt": "2024-07-09T07:33:21.192Z",
+      "time": 60,
+      "elapsed": 34,
+      "goal": "Slack automation",
+      "ended": true,
+      "work": "working on ui 3"
+    },
     {
       "createdAt": "2024-07-09T08:23:22.054Z",
       "time": 60,
@@ -515,30 +498,28 @@
       "work": "improving scraper"
     },
     {
-      "createdAt": "2024-07-10T09:00:35.972Z",
+      "createdAt": "2024-07-03T09:46:02.300Z",
       "time": 60,
       "elapsed": 60,
-      "goal": "Instagram Scraper",
+      "goal": "3d website - dino",
       "ended": true,
-      "work": "enhancing the output information"
+      "work": "modeling assets"
     },
     {
-      "createdAt": "2024-07-10T10:45:23.221Z",
+      "createdAt": "2024-07-02T18:58:53.074Z",
       "time": 60,
       "elapsed": 60,
-      "goal": "Instagram Scraper",
+      "goal": "3d website - dino",
       "ended": true,
-      "work": "improvements and enhancements"
-    }
-  ],
-  "Session viewer": [
+      "work": "preparing the html and js"
+    },
     {
-      "createdAt": "2024-07-10T15:02:42.639Z",
+      "createdAt": "2024-07-04T10:28:01.120Z",
       "time": 60,
-      "elapsed": 40,
-      "goal": "Session viewer",
-      "ended": false,
-      "work": "working on the html and js"
+      "elapsed": 60,
+      "goal": "3d website - dino",
+      "ended": true,
+      "work": "working on obstacle that makes you crouch"
     }
   ]
 }

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Slackey&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FAEFD6;
+  color: #FF8C37;
+  padding: 20px;
+}
+
+h1 {
+  font-family: "Slackey", cursive;
+  font-size: 48px;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Slackey", cursive;
+  font-size: 32px;
+  text-align: left;
+}
+
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  text-align: left;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  text-align: left;
+}
+
+a {
+  color: #ececec;
+}
+
+.session_group {
+  margin-top: 50px;
+}
+.session_group h2 {
+  margin-bottom: 10px;
+}
+.session_group .session_items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.session_group .session_items .session_item {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #0AAFB4;
+  color: #ececec;
+  width: 45vw;
+  min-width: 200px;
+}
+.session_group .session_items .session_item h3 {
+  margin-bottom: 10px;
+}
+.session_group .session_items .session_item span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.divider {
+  margin-top: 50px;
+  width: 100%;
+  height: 2px;
+  background-color: #FF8C37;
+}
+
+/*# sourceMappingURL=style.css.map */

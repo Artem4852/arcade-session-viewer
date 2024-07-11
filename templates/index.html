@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Arcade session viewer</title>
 </head>
 <body>
+    <h1>Arcade session viewer</h1>
     {% for goal, sessions in sessions_grouped.items()  %}
         <div class="session_group">
             <h2>Goal: {{ goal }}</h2>
+            <div class="session_items">
             {% for session in sessions %}
                 <div class="session_item">
-                    <h3>Session title: {{ session['work'] }}</h3>
+                    <h3>{{ session['work'] }}</h3>
                     <p>Created at: {{ session['createdAt'] }}</p>
-                    <p>Lasted: {{ session['elapsed'] }}</p>
+                    <p>Time: {{ session['elapsed'] }} minutes</p>
                     <p>Status: {{ session['status'] }}</p>
-                    <p>Timezone: {{ session['timezone'] }}</p>
-                    {% if session['status'] == 'approved' %}
-                        <p>Minutes approved: {{ session['minutes_approved'] }}</p>
-                    {% endif %}
+                    <p>URL: <span class="link" onclick="loadUrl('url_{{ session['createdAt'] }}')" id="url_{{ session['createdAt'] }}">Load</span></p>
                 </div>
             {% endfor %}
+            </div>
         </div>
+        {% if goal != last_goal %}
+            <div class="divider"></div>
+        {% endif %}
     {% endfor %}
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
