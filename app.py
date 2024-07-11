@@ -8,6 +8,11 @@ dotenv.load_dotenv()
 user_timezone = "00:00"
 user_id = "U078ZKU61S5"
 
+slack_headers = {
+    "cookie": os.getenv("cookie"),
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+}
+
 def get_sessions(slack_id, token):
     global sessions_grouped
     with open('sessions.json', 'r') as f:
@@ -23,9 +28,7 @@ def get_sessions(slack_id, token):
     # sessions_grouped = {'No Goal': []}
 
     # for session in sessions['data']:
-    #     session['status'] = random.choice(['approved', 'rejected', 'unreviewed'])
-    #     session['timezone'] = user_timezone
-    #     session['work'] = session['work'].capitalize()
+    #     session['work'] = session['work'][0].upper() + session['work'][1:]
     #     goal = session['goal']
     #     if goal not in sessions_grouped:
     #         sessions_grouped[goal] = []
@@ -40,51 +43,82 @@ def get_sessions(slack_id, token):
     return sessions_grouped, list(sessions_grouped)[-1]
 
 def slack_search(query):
-    headers = {
-        "cookie": os.getenv("cookie"),
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
-    }
     form = {
         "token": os.getenv("token"),
         "module": "messages",
         "query": query,
     }
-    response = requests.post("https://hackclub.slack.com/api/search.modules.messages", headers=headers, data=form)
+    response = requests.post("https://hackclub.slack.com/api/search.modules.messages", headers=slack_headers, data=form)
     return response.json()
+
+def get_thread_replies(ts):
+    form = {
+        "token": os.getenv("token"),
+        "channel": "C06SBHMQU8G",
+        "ts": str(ts),
+        "inclusive": "true",
+        "limit": "28"
+    }
+    response = requests.post("https://hackclub.slack.com/api/conversations.replies", headers=slack_headers, data=form)
+    return response.json()
+
+def get_session_data(session_id, search=False):
+    session = None
+    for _, sessions in sessions_grouped.items():
+        for s in sessions:
+            if s['createdAt'] == session_id:
+                session = s
+                break
+    if search: data = slack_search(f'{session["goal"]} {session["work"]} <@{user_id}>')
+    else: data = None
+    return session, data
 
 app = flask.Flask(__name__)
 
 @app.route('/')
 def main():
     global last_goal
-    sessions_grouped, last_goal = get_sessions(user_id, "94dc4dcf-5946-4b28-97fb-b18374ed13ac")
+    sessions_grouped, last_goal = get_sessions("Never gonna give you up", "94dc4dcf-5946-4b28-97fb-b18374ed13ac")
     return render_template('index.html', sessions_grouped=sessions_grouped, last_goal=last_goal)
-
-@app.route('/set-timezone', methods=['POST'])
-def set_timezone():
-    global sessions_grouped
-    timezone_offset = flask.request.json['timezone']
-    for group, sessions in sessions_grouped.items():
-        for n, session in enumerate(sessions):
-            sessions_grouped[group][n]['createdAt'] = (datetime.fromisoformat(session['createdAt']) + timedelta(minutes=int(timezone_offset))).strftime('%Y-%m-%d %H:%M:%S')
-    print(sessions_grouped)
-    return flask.render_template('index.html', sessions_grouped=sessions_grouped, last_goal=last_goal)
 
 @app.route('/get-url', methods=['POST'])
 def get_url():
     session_id = flask.request.json['id']
-    session = None
-    for _, sessions in sessions_grouped.items():
-        for s in sessions:
-            if s['createdAt'] == session_id.replace('url_', ''):
-                session = s
-                break
-    data = slack_search(f'{session["goal"]} {session["work"]} <@{user_id}>')
-    with open('2.json', 'w') as f:
-        json.dump(data, f)
+    _, data = get_session_data(session_id.replace('url_', ''), search=True)
     try: return flask.jsonify({'url': data['items'][0]['messages'][0]['permalink']})
     except IndexError: return flask.jsonify({'url': None})
 
+@app.route('/get-status', methods=['POST'])
+def get_status():
+    session_id = flask.request.json['id']
+    session_link = flask.request.json['link']
+    if "https" in session_link:
+        session_ts = session_link.split('?thread_ts=')[1]
+        session, _ = get_session_data(session_id.replace('status_', ''))
+    else:
+        session, data = get_session_data(session_id.replace('status_', ''), search=True)
+        session_link = data['items'][0]['messages'][0]['permalink']
+        session_ts = data['items'][0]['messages'][0]['ts']
+
+    status = "Unreviewed"
+    if slack_search(f"\"approved\" \"{session['work']}\" \"{session['goal']}\" <@{user_id}> in:#scrapbook")['pagination']['total_count'] > 0:
+        status = "Approved"
+    elif slack_search(f"\"rejected\" \"{session['work']}\" \"{session['goal']}\" <@{user_id}> in:#scrapbook")['pagination']['total_count'] > 0:
+        status = "Rejected"
+    
+    if status != "Unreviewed":
+        return flask.jsonify({'status': status, 'url': session_link})
+
+    replies = get_thread_replies(session_ts)
+    try: messages = [m['text'] for m in replies['messages']]
+    except: messages = []
+
+    if any('you\'ve got a arcade session' in m for m in messages):
+        status = "Approved"
+    elif any('rejected' in m for m in messages):
+        status = "Rejected"
+    
+    return flask.jsonify({'status': status, 'url': session_link})
 
 if __name__ == '__main__':
     app.run(port=3000)

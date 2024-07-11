@@ -62,7 +62,7 @@ a {
 .session_group .session_items .session_item h3 {
   margin-bottom: 10px;
 }
-.session_group .session_items .session_item span {
+.session_group .session_items .session_item span.link {
   text-decoration: underline;
   cursor: pointer;
 }

@@ -15,9 +15,9 @@
             {% for session in sessions %}
                 <div class="session_item">
                     <h3>{{ session['work'] }}</h3>
-                    <p>Created at: {{ session['createdAt'] }}</p>
+                    <p>Created at: <span class="datetime">{{ session['createdAt'] }}</span></p>
                     <p>Time: {{ session['elapsed'] }} minutes</p>
-                    <p>Status: {{ session['status'] }}</p>
+                    <p>Status: <span class="link" onclick="loadStatus('status_{{ session['createdAt'] }}')" id="status_{{ session['createdAt'] }}">Load</span></p>
                     <p>URL: <span class="link" onclick="loadUrl('url_{{ session['createdAt'] }}')" id="url_{{ session['createdAt'] }}">Load</span></p>
                 </div>
             {% endfor %}
@@ -27,6 +27,9 @@
             <div class="divider"></div>
         {% endif %}
     {% endfor %}
+    <script>
+        var sessions_grouped = {{ sessions_grouped | tojson }};
+    </script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
