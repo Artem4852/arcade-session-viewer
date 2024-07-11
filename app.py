@@ -135,5 +135,5 @@ def set_cookies():
     return response
 
 if __name__ == '__main__':
-    app.run(port=8080)
+    app.run(port=34877)
     # with open("2.json", "w") as f: json.dump(slack_search('"Instagram Scraper" "improvements and enhancements"'), f)
